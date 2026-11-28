@@ -5,3 +5,4 @@ from app.routers.products import router as products_router
 from app.routers.cart import router as cart_router
 from app.routers.addresses import router as addresses_router
 from app.routers.orders import router as orders_router
+from app.routers.payments import router as payments_router
