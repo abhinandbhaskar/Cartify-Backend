@@ -4,6 +4,9 @@ from app.routers.auth import router as auth_router
 from app.routers.users import router as users_router
 from app.routers.categories import router as categories_router
 from app.routers.products import router as products_router
+from app.routers.cart import router as cart_router
+from app.routers.addresses import router as addresses_router
+from app.routers.orders import router as orders_router
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -22,3 +25,6 @@ app.include_router(auth_router, prefix=settings.API_V1_STR)
 app.include_router(users_router, prefix=settings.API_V1_STR)
 app.include_router(categories_router, prefix=settings.API_V1_STR)
 app.include_router(products_router, prefix=settings.API_V1_STR)
+app.include_router(cart_router, prefix=settings.API_V1_STR)
+app.include_router(addresses_router, prefix=settings.API_V1_STR)
+app.include_router(orders_router, prefix=settings.API_V1_STR)
