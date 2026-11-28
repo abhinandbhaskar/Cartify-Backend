@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from app.core.config import settings
 from app.routers.auth import router as auth_router
 from app.routers.users import router as users_router
+from app.routers.categories import router as categories_router
+from app.routers.products import router as products_router
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -18,3 +20,5 @@ def health_check():
 # Register API v1 Routers
 app.include_router(auth_router, prefix=settings.API_V1_STR)
 app.include_router(users_router, prefix=settings.API_V1_STR)
+app.include_router(categories_router, prefix=settings.API_V1_STR)
+app.include_router(products_router, prefix=settings.API_V1_STR)
